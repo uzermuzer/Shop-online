@@ -1,9 +1,7 @@
-from BaseApp import BasePage
+from tests.pages.BaseApp import BasePage
 from selenium import webdriver
-from lokators import SearchHelper
+from tests.pages.PageLogin import SearchHelper
 import time
-
-
 
 def test_goToLogin(browser):
     main_page = SearchHelper(browser)
