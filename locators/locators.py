@@ -28,7 +28,6 @@ class PageSearchLocators:
     deckstope = (By.XPATH, "/html/body/div[1]/nav/div[2]/ul/li[1]")
     Mac = (By.XPATH, "/html/body/div[1]/nav/div[2]/ul/li[1]/div/div/ul/li[2]/a")
     add_IMAC = (By.XPATH, "/html/body/div[2]/div/div/div[2]/div/div/div[2]/div[2]/button[1]")
-    basket = (By.XPATH, "")
 
 
     #login_page
@@ -36,39 +35,37 @@ class PageSearchLocators:
     password_form = (By.XPATH, "/html/body/div[2]/div/div/div/div[2]/div/form/div[2]/input")
     go_account = (By.XPATH, '/html/body/div[2]/div/div/div/div[2]/div/form/input')
 
+    #selection_currency
+    CURRENCY_SELECTION = (By.CSS_SELECTOR, 'i[class="fa fa-caret-down"]')
+    EURO_SELECTION = (By.CSS_SELECTOR, "button[name='EUR']")
+    USD_SELECTION = (By.CSS_SELECTOR, "button[name='USD']")
+    POUND_SELECTION =(By.CSS_SELECTOR, "button[name='GBP']")
+    CURRENCY_MAC = (By.CSS_SELECTOR, 'p[class="price"]')
 
 
 
-class SearchHelper(BasePage):
-    def search_login(self):
-        login = self.find_element(PageSearchLocators.login_or_registration)
-        login.click()
-        login = self.find_element(PageSearchLocators.page_login)
-        login.click()
-        return login
+    #add item to cart
+    BUTTON_ADD_TABLETS_TO_CART = (By.XPATH, "/html/body/div[2]/div/div/div[2]/div/div/div[2]/div[2]/button[1]")
+    BUTTON_CART = (By.CSS_SELECTOR, 'button[class= "btn btn-inverse btn-block btn-lg dropdown-toggle"]')
+    PRICE_OF_THE_PRODUCT = (By.XPATH, '/html/body/header/div/div/div[3]/div/ul/li[1]/table/tbody/tr/td[4]')
+    TOTAL_PRICE = (By.XPATH, '/html/body/header/div/div/div[3]/div/ul/li[1]/table/tbody/tr/td[4]')
+    PAGE_MAC = (By.CSS_SELECTOR, "div[class='image']")
+    CLEAR_ADD = (By.CSS_SELECTOR, "i[class='fa fa-times']")
+    ADD_MAC_IN_PAGE = (By.CSS_SELECTOR, '#input-quantity')
+    ADD_TO_CART = (By.CSS_SELECTOR, "button[class='btn btn-primary btn-lg btn-block']")
+    SUCSES_ADD = (By.XPATH, '/html/body/div[2]/div[1]/a[1]')
+    BUTTON_CART_IN_PAGE = (By.CSS_SELECTOR, 'span[id="cart-total"]')
 
-    def move_login(self):
-        forma = self.find_element(PageSearchLocators.email_form)
-        forma.click()
-        forma.send_keys("basirinaleksandr@gmail.com")
-        forma = self.find_element(PageSearchLocators.password_form)
-        forma.click()
-        forma.send_keys("raz-raz")
-        forma = self.find_element(PageSearchLocators.go_account).click()
-        return forma
+    #link_page
+    SIMPLE_LINK =(By.CSS_SELECTOR, 'a[id= "simleLink"]')
+    BAD_REQUEST =(By.CSS_SELECTOR, 'a[id= "bad-request"]')
 
-    def bay_Mac(self):
-        bay = self.find_element(PageSearchLocators.deckstope)
-        bay.click()
-        bay = self.find_element(PageSearchLocators.Mac)
-        bay.click()
-        return bay
 
-    def add_mac(self):
-        button = self.find_element(PageSearchLocators.add_IMAC)
-        button.click()
 
-        return button
+
+
+
+
 
 
 
